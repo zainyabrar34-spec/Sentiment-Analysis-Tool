@@ -8,7 +8,7 @@ def index():
     robot = "neutral.png"
     sentiment_text = ""
     sentiment_class = ""
-    user_text = ""   # ✅ ALWAYS define at top
+    user_text = ""   
 
     if request.method == "POST":
         user_text = request.form.get("text", "")
@@ -34,7 +34,7 @@ def index():
         robot_image=robot,
         sentiment_text=sentiment_text,
         sentiment_class=sentiment_class,
-        user_text=user_text   # ✅ now always exists
+        user_text=user_text   
     )
 
 if __name__ == "__main__":
