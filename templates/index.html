@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SENTIMOBOT – Text Sentiment Analyzer</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+<div class="main-card">
+
+    <h1>SentimoBot 🤖</h1>
+    <p class="tagline">ANALYZE THE EMOTION BEHIND YOUR TEXT</p>
+
+    <form method="POST">
+        <input type="text" name="text"
+       placeholder="Type something..."
+       value="{{ user_text }}"
+       required>
+
+        <button type="submit">ANALYZE</button>
+    </form>
+
+    {% if robot_image %}
+        <img id="robot" src="{{ url_for('static', filename=robot_image) }}" alt="robot">
+
+        <div class="sentiment-box {{ sentiment_class }}">
+            {{ sentiment_text }}
+        </div>
+    {% endif %}
+
+</div>
+
+</body>
+</html>
